@@ -10,7 +10,7 @@ export function Dice() {
     function handleSubmit() {
         var tmp = Math.floor((Math.random() * 10) % 6)
         rollDice(tmp + 1)
-        alert(`Dice Roll: ${tmp}`)
+        alert(`Dice Roll: ${res}`)
     }
     function handleHover() {
         toggleState(true)
