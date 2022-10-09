@@ -7,6 +7,7 @@ import { Footer } from "./components/Footer/Footer.jsx" // importing local modul
 import { Body as Body } from "./components/Body/Body.jsx" // importing local module
 import Joke from "./components/Joke/Joke.jsx"
 import { Forms } from "./components/Forms/Forms.jsx" // importing local module
+import { Dice } from "./components/Dice/Dice.jsx" // importing local module
 
 // making a Component
 // similar to function
@@ -23,7 +24,7 @@ function App() {
       <Navbar />
       <Body number={1} />
       <Footer />
-      <Forms />
+      <Dice />
       <Joke punchline="LOL" setup="setups" />
     </div>
   )
