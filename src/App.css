@@ -19,13 +19,16 @@
   filter: drop-shadow(0 0 2em #206e6eaa);
 }
 
-.nav-items {
-  list-style: none;
-  display: flex;
-  justify-content: space-around;
-  align-items: stretch;
-
+.App {
+  float: left;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
 }
+
+
 
 @keyframes logo-spin {
   from {

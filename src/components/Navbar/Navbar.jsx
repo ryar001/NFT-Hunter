@@ -1,13 +1,15 @@
 import React from "react"
-export function Header() {
+import reactLogo from './assets/react.svg'
+import './index.css'// our styling 
+export function Navbar() {
     return (
-        <header>
+        <nav className="navbar">
             <img src={reactLogo} className='logo' />
             <ul className='nav-items'>
                 <li>Connect Wallet</li>
                 <li>FAQ</li>
                 <li>About</li>
             </ul>
-        </header>
+        </nav>
     )
 }

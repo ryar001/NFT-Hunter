@@ -1,0 +1,10 @@
+.body {
+    color: rgb(13, 0, 255);
+    background-color: rgb(255, 255, 255);
+    font-family: 'Impact';
+    font-style: normal;
+    font-weight: 900;
+    font-size: 1.25rem;
+    margin-left: auto;
+    padding-left: auto;
+}

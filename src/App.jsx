@@ -1,9 +1,12 @@
 import { useState, useEffect } from 'react'
-import reactLogo from './assets/react.svg'
 import './App.css'// our styling
-import Header from "./pageLayouts/Header.jsx" // importing local module
-import Footer from "./pageLayouts/Footer.jsx" // importing local module
-import Body from "./pageLayouts/Body.jsx" // importing local module
+
+// NOte for importing Named export (not export default, need to put in {})
+import { Navbar } from "./components/Navbar/Navbar.jsx" // importing local module
+import { Footer } from "./components/Footer/Footer.jsx" // importing local module
+import { Body as Body } from "./components/Body/Body.jsx" // importing local module
+import Joke from "./components/Joke/Joke.jsx"
+import { Forms } from "./components/Forms/Forms.jsx" // importing local module
 
 // making a Component
 // similar to function
@@ -17,9 +20,11 @@ function App() {
 
   return (
     <div className="App">
-      <Header />
-      <Body />
+      <Navbar />
+      <Body number={1} />
       <Footer />
+      <Forms />
+      <Joke punchline="LOL" setup="setups" />
     </div>
   )
 }
