@@ -1,0 +1,1 @@
+import nftJson from "/Users/jokerssd/Documents/reactGuide/src/components/NftMetaData/assets/nftJson/Yummi-Universe-Naru.json";

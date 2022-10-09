@@ -23,10 +23,10 @@ rem is root-em font size relative to root element
     background: linear-gradient(90deg, #282280 1.18%, #A626D3 100%);
 }
 
-.logo {
-    height: 100%;
-    left: 0%;
-    
+.logo2 {
+    height: auto;
+    max-width: 100%;
+    border-radius: 4px;
 }
 
 .nav-items {

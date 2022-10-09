@@ -1,0 +1,12 @@
+/* 1 rem == 16px
+rem is root-em font size relative to root element
+*/
+
+
+.naru {
+    height: auto;
+    max-width: 10%;
+    border-radius: 30px;
+    margin: 1rem;
+}
+

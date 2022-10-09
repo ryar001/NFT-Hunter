@@ -5,7 +5,7 @@ import './App.css'// our styling
 import { Navbar } from "./components/Navbar/Navbar.jsx" // importing local module
 import { Footer } from "./components/Footer/Footer.jsx" // importing local module
 import { Body as Body } from "./components/Body/Body.jsx" // importing local module
-import Joke from "./components/Joke/Joke.jsx"
+import NftMetaData from "./components/NftMetaData/NftMetaData.jsx"
 import { Forms } from "./components/Forms/Forms.jsx" // importing local module
 import { Dice } from "./components/Dice/Dice.jsx" // importing local module
 
@@ -25,7 +25,7 @@ function App() {
       <Body number={1} />
       <Footer />
       <Dice />
-      <Joke punchline="LOL" setup="setups" />
+      <NftMetaData punchline="LOL" setup="setups" />
     </div>
   )
 }
