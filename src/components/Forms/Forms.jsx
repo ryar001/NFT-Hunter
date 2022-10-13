@@ -3,6 +3,7 @@ import "./index.css"
 import { useState, useEffect } from 'react'
 import emailAlert  from "./emailAlert.jsx"
 export function Forms() {
+    // Note if set state that req prev state, use a function as input to the state-setting fcuntion instead
     const [isHover, toggleState] = useState(false)
     const [userInput,setUserInput] = useState("")
     const [nftData, setData] = useState(null)
