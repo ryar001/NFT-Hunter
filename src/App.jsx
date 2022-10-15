@@ -22,8 +22,9 @@ function App() {
     <div className="App">
       <Navbar />
       <Body number={1} />
-      <Footer />
+      
       <Forms />
+      <Footer />
     </div>
   )
 }

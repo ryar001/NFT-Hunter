@@ -1,10 +1,12 @@
 .body {
-    color: rgb(13, 0, 255);
-    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
+
+    background: linear-gradient(90deg, #282280 1.18%, #A626D3 100%);
     font-family: 'Impact';
     font-style: normal;
     font-weight: 900;
     font-size: 1.25rem;
     margin-left: auto;
     padding-left: auto;
+    border-radius: 10px;
 }

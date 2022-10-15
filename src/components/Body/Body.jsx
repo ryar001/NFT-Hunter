@@ -11,11 +11,11 @@ export function Body(props) {
 
     return (
         <div className="body">
-            <h1>Why learn React?</h1>
+            <h1>How to Use</h1>
             <ol>
-                <li>Need for backend to work</li>
-                <li>May get a full stack job</li>
-                <li>Passed props: {props.number}</li>
+                <li>key in the NFT full name: "NARU01156" OR just the number "1156"</li>
+                <li>press "Submit" to show NFT data</li>
+                <li>Hit "SNIPE"  to allow auto buy with smart contract(WIP)</li>
 
             </ol>
         </div>
