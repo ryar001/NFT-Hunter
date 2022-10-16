@@ -4,14 +4,13 @@ import naruHehe from './assets/NaruHehe.jpeg'
 import './index.css'// our styling 
 
 export function Navbar() {
+
     return (
         <nav className="navbar">
             <img src={naruHehe} className='logo2' />
-            <ul className='nav-items'>
-                <li>Connect Wallet</li>
-                <li>FAQ</li>
-                <li>About</li>
-            </ul>
+            <button className='navbar-connectWallet'> 
+                Connect Wallet
+            </button>
         </nav>
     )
 }

@@ -2,13 +2,18 @@ import React from "react"
 import "./index.css"
 import { useState, useEffect } from 'react'
 import emailAlert  from "./emailAlert.jsx"
+import Cards from "./Cards.jsx"
+import nftJson from "./../../assets/nftJson/Yummi-Universe-Naru.json"
+console.log(nftJson["Naru01156"].onchain_metadata.attributes)
 export function Forms() {
     // Note if set state that req prev state, use a function as input to the state-setting fcuntion instead
     const [isHover, toggleState] = useState(false)
     const [userInput,setUserInput] = useState("")
+    const [showCard,toggleCard]=useState(false)
     const [nftData, setData] = useState(null)
     const cloudSvc = "https://cloudflare-ipfs.com/ipfs/"
-    const [nftImg,setNftImg]=useState("src/components/Navbar/assets/NaruHehe.jpeg")
+    // const [nftImg,setNftImg]=useState("src/components/Navbar/assets/NaruHehe.jpeg")
+    const [nftImg,setNftImg]=useState("")
     // mapping function to easily apply React to each element in the arrays
     // willl be replace with props.ipfs to display he nft
     //read files
@@ -18,27 +23,41 @@ export function Forms() {
     }
     async function pullData(nftName){
         // nftJson may be reqplace with blockfrost api call or will cont use with full JSONcontaining all Narus/nft set
-        let nftJson = "src/assets/nftJson/Yummi-Universe-Naru.json"
-        var tmp
+    
         var ifps
         var nft
-        tmp=await fetch(nftJson) 
-        emailAlert(nftName)
-        tmp=await tmp.text()
-        
-        tmp = await JSON.parse(tmp)
-        console.log()
-        console.log(`attr check: ${Object.keys(tmp[nftName].onchain_metadata.attributes)}`)
-        // getting the ifps info for the img
-        nft=tmp[nftName]
-        ifps=nft.onchain_metadata.image
-        let i=ifps.indexOf('//')
-        ifps=ifps.slice(i+2,ifps.length)
-        setNftImg(cloudSvc+ifps)
-        // tmp = Object.entries(tmp)
-        displayMetaData(tmp[nftName].onchain_metadata.attributes)
-        console.log(ifps)
+
+        // emailAlert(nftName)
+
+        console.log(`attr check: ${nftName in nftJson} `)
+        if (nftName in nftJson){
+            toggleCard(true)
+            // getting the ifps info for the img
+            nft=nftJson[nftName]
+            ifps=nft.onchain_metadata.image
+            let i=ifps.indexOf('//')
+            ifps=ifps.slice(i+2,ifps.length)
+            let img=cloudSvc+ifps
+            // resp=await fetch(cloudSvc+ifps)
+            // blob=await resp.blob()
+            // reader=new FileReader()
+            // reader.readAsDataURL(blob)
+            // reader.onloadend =()=>{
+            //     const imgData=reader.result
+            //     console.log(imgData)
+            // 
+            console.log(img)
+            setNftImg("src/components/Navbar/assets/NaruHehe.jpeg")
+            displayMetaData(nftJson[nftName].onchain_metadata.attributes)
+            console.log(cloudSvc+ifps)
+            }
+        else{
+            alert(`${nftName} is not a valid NFT`)
+            toggleCard(false)
+
         }
+        }
+      
     // first alphabet check
     function isLetter(c) {
         return c.toLowerCase() != c.toUpperCase();
@@ -46,6 +65,7 @@ export function Forms() {
     
     async function handleSubmit() {
         var tmp
+        console.log(nftJson)
         // if user put Naru
         if (isLetter(userInput.substring(0, 1))) {
             tmp=userInput.toLowerCase()
@@ -70,7 +90,7 @@ export function Forms() {
                 tmp="Naru"+userInput
             }
         }
-    
+        
         setUserInput(tmp)
         pullData(tmp) // proceed to pull meta data and attribute
     }
@@ -92,14 +112,16 @@ export function Forms() {
         <div>
             <div className="form">
                 <input type="text" placeholder="NFT name" className="input" onChange={handleText}/>
-                <button onMouseOver={handleHover} onMouseLeave={handleLeave} onClick={handleSubmit} className="submit">
-                    <div>{isHover && <div className="mouseHoverText">Hunt!</div>}</div>
-                    <div>{!isHover && <div className="mouseLeaveText">Submit!</div>}</div>
+                <button onMouseOver={handleHover} onMouseLeave={handleLeave} onClick={handleSubmit} className="form-submit">
+                    {isHover && <div className="form-mouseHoverText">Submit!</div>}
+                    {!isHover && <div className="form-mouseLeaveText">Submit!</div>}
                 </button>
             </div>
-            <div><img src={nftImg} className='naru' /></div>
-            {nftData!=null && nftData}
-            
+            {<div className="forms-cardArea"> 
+                {showCard && <Cards nftData={nftData} nftImg={nftImg} />}
+                {/* <Cards nftData={nftData} nftImg={nftImg} /> */}
+            </div>}
+
 
         </div>
     )

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1665837334874" clover="3.2.0">
-  <project timestamp="1665837334874" name="All files">
+<coverage generated="1665803417777" clover="3.2.0">
+  <project timestamp="1665803417777" name="All files">
     <metrics statements="36" coveredstatements="36" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1" elements="43" coveredelements="43" complexity="0" loc="36" ncloc="36" packages="1" files="1" classes="1"/>
     <file name="Summ.js" path="/Users/jokerssd/Documents/reactGuide/src/Summ.js">
       <metrics statements="36" coveredstatements="36" conditionals="6" coveredconditionals="6" methods="1" coveredmethods="1"/>
