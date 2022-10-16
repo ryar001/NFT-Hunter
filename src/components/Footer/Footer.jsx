@@ -4,7 +4,7 @@ export function Footer() {
     return (
         <>
             <footer className="footer">
-                <small className="footer-note">copyright</small>
+                <small className="footer-note">copyright: 2021 Yummi Universe</small>
             </footer>
         </>
     )

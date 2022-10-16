@@ -9,7 +9,9 @@ rem is root-em font size relative to root element
     font-size: 2rem;
     
     /* identical to box height */
-    position: fixed;
+    margin-top: 5%;
+    padding-bottom: 0px;
+    position: relative;
     width: 100%;
     height:fit-content;
     left: 0px;

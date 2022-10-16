@@ -1,6 +1,8 @@
 import React from "react"
 import reactLogo from './assets/react.svg'
 import naruHehe from './assets/NaruHehe.jpeg'
+import { Blockfrost, Lucid } from "lucid-cardano" // NPM
+
 import './index.css'// our styling 
 
 export function Navbar() {
