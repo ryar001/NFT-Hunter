@@ -8,6 +8,7 @@ import { useState, useEffect } from 'react'
 // getting varible from the main function
 // then just need props , shorthand for properties
 // props.{PROPS NAME}
+// can also destructure by {number} instead of props
 export function Body(props) {
 
 
